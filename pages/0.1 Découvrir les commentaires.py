@@ -1,7 +1,11 @@
 import streamlit as st
+st.set_page_config(
+    page_icon=":snake:",
+)
+st.markdown("<h1 style='text-align: center; color: black;'>Découvrir les commentaires</h1>", unsafe_allow_html=True)
+
 st.image("https://waytolearnx.com/wp-content/uploads/2020/06/Les-commentaires-en-Python-1.jpg")
 st.markdown("""
-# Découvrir les commentaires
 Nous avons vu que les markdowns permettaient de créer des commentaires, cependant ils ne sont pas accessibles dans les fichiers scripts et parfois on veut commenter différemment.
 """)
 

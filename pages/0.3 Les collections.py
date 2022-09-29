@@ -1,4 +1,13 @@
 import streamlit as st
+
+st.set_page_config(
+    page_icon=":snake:",
+)
+st.markdown("<h1 style='text-align: center; color: black;'>Les collections</h1>", unsafe_allow_html=True)
+
+
+
+
 st.image("http://www.aftenposteninnsikt.no/sites/default/files/styles/preset_1_article_carousel_image/public/web_iStock-860844068.jpg?itok=2-RmQfWr")
 st.markdown("""
 # Les listes 

@@ -1,10 +1,15 @@
 import streamlit as st
 
+
+st.set_page_config(
+    page_icon=":snake:",
+)
+st.markdown("<h1 style='text-align: center; color: black;'>Les variables</h1>", unsafe_allow_html=True)
+
+
+
 st.image("https://geekflare.com/wp-content/uploads/2021/11/system-environment-variables.png")
 st.markdown("""
-# Les variables et les types de variables
-
-## Les variables
 
 ### Déclarer une variable
 

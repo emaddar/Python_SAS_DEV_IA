@@ -2,6 +2,11 @@ from re import L
 import streamlit as st
 
 
+st.set_page_config(
+    page_icon=":snake:",
+)
+st.markdown("<h1 style='text-align: center; color: black;'>Les conditions & les boucles</h1>", unsafe_allow_html=True)
+
 
 
 st.image("https://user.oc-static.com/upload/2021/12/09/1639058458628_P1C6_Structurez-votre-code-a%CC%80-laide-des-conditions.png")

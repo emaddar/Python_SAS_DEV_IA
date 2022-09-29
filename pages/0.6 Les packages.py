@@ -2,6 +2,12 @@ import streamlit as st
 
 
 
+st.set_page_config(
+    page_icon=":snake:",
+)
+st.markdown("<h1 style='text-align: center; color: black;'>Les packages</h1>", unsafe_allow_html=True)
+
+
 
 st.image("https://blog.engineering.publicissapient.fr/wp-content/uploads/2020/09/python.jpg")
 

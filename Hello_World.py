@@ -3,9 +3,11 @@
 # Contents of ~/my_app/streamlit_app.py
 import streamlit as st
 
-st.markdown("""
-# Introduction à Python
-""")
+
+st.set_page_config(
+    page_icon=":snake:",
+)
+st.markdown("<h1 style='text-align: center; color: black;'>Introduction à Python</h1>", unsafe_allow_html=True)
 
 
 st.image(

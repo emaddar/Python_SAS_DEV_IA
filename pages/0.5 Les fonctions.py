@@ -1,6 +1,10 @@
 import streamlit as st
 
 
+st.set_page_config(
+    page_icon=":snake:",
+)
+st.markdown("<h1 style='text-align: center; color: black;'>Les fonctions</h1>", unsafe_allow_html=True)
 
 
 st.image("https://accromath.uqam.ca/wp-content/uploads/2013/08/fonctions_titre.png")
