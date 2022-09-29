@@ -26,7 +26,8 @@ Notons :
 - $m$ pour le nombre d'exemples (logements) d'entraînement (training examples)
 - $n$ pour lr nombre de variables
 - Une paire $(x^{(i)},y^{(i)})$ est appelée **training example**
-- l'ensemble de données que nous allons utiliser $${(x^{(i)},y^{(i)}), i = 1,2,3,...}$$ (une liste de $m$ exemples de raining examples) est appelé un **training set**
+- l'ensemble de données que nous allons utiliser $${(x^{(i)},y^{(i)}), i = 1,2,3,...}$$ (une liste de $m$ exemples de raining examples) est appelé un
+ **training set**
 
 ### Qu'est-ce qu'une modélisation ?
 C'est un algorithme qui lie une variable explicative (surface en $m^2$) par une variable à expliquer (le prix en €). Dans notre cas, notre algorithme est une fonction mathématique $h$.
