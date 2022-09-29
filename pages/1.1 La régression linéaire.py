@@ -173,6 +173,15 @@ où $\alpha$ (hyper parameter) est appelé le **taux d'apprentissage** (**learni
 
 Il faut exécuter cette boucle jusqu'à la convergence de l'algorithme, c'est-à-dire jusqu'à ce que les paramètres $\theta_i$ ne varient (presque) plus.
 
+#### Hyperparamètre : alpha
+Alpha est un **hyperparamètre** qui est appelé le **coefficient d'apprentissage**. 
+
+Un hyperparamètre, c'est un paramètre que l'algorithme ne peut pas apprendre par lui-même. Il faut tester l'algorithme en faisant varier cet hyperparamètre.
+
+Plus le coefficient d'apprentissage est élevé, plus les pas entre deux mises à jour de la fonction coût seront importants. En modifiant ce paramètre, 
+nous sommes confrontés à un compromis entre la vitesse d'entraînement et la convergence vers un solution satisfaisante.
+L'implémentation basique de cet algorithme s'appelle le **batch gradient descent**. À chaque étape de calcul, il va calculer la dérivée partielle de toutes les observations ($m$). Cette méthode est donc longue pour les jeux de données très volumineux. 
+
 ### Descente du gradient : pour la régression linéaire
 
 Dans le cas de la régression linéaire simple, la formule devient:
@@ -195,13 +204,16 @@ st.image("LR2.png")
 
 st.markdown(r"""
 
-#### Hyperparamètre : alpha
-Alpha est un **hyperparamètre** qui est appelé le **coefficient d'apprentissage**. 
+Il existe une autre implémentation qui est le **stochastic gradient descent**, au lieu de prendre toutes les observations à chaque étape, 
+l'algorithme va sélectionner au hasard une observation et calculer la dérivée partielle de celle-ci, 
+en pratique cette méthode est assez efficace car elle impacte peu les performances et accélère énormément le temps d'entraînement.
 
-Un hyperparamètre, c'est un paramètre que l'algorithme ne peut pas apprendre par lui-même. Il faut tester l'algorithme en faisant varier cet hyperparamètre.
-
-Plus le coefficient d'apprentissage est élevé, plus les pas entre deux mises à jour de la fonction coût seront importants. En modifiant ce paramètre, 
-nous sommes confrontés à un compromis entre la vitesse d'entraînement et la convergence vers un solution satisfaisante.
-L'implémentation basique de cet algorithme s'appelle le **batch gradient descent**. À chaque étape de calcul, il va calculer la dérivée partielle de toutes les observations ($m$). Cette méthode est donc longue pour les jeux de données très volumineux. 
+Outre ces deux versions, il existe des alternatives modernes (et assez complexes) à la descente de gradient comme **L-BFGS, LMA**, etc.
 """)
 
+st.image("LR3.png")
+
+st.markdown("""
+La descente du gradient peut être sujette à la convergence dans des minimums locaux tandis que le problème d'optimisation posé pour la 
+régression linéaire n'a qu'un seul minimum. **En d'autre mot la fonction coût de la régression linéaire est convexe**.
+""")
