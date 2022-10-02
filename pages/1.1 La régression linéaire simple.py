@@ -272,6 +272,5 @@ Dans le cas d'une régression linéaire simple, le coefficient de détermination
 #### Abordez la régression linéaire d’un point de vue statistique
 Lien [ici](https://openclassrooms.com/fr/courses/4525326-realisez-des-modelisations-de-donnees-performantes/5754132-apprehendez-le-fonctionnement-de-la-regression-lineaire
 )
-
 """)
 
