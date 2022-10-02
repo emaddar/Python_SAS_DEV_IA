@@ -6,7 +6,7 @@ from scipy import stats
 import numpy as np
 
 st.set_page_config(
-    page_icon=":snake:",
+    page_icon="🐍",
 )
 st.markdown("<h1 style='text-align: center; color: black;'>La régression linéaire</h1>", unsafe_allow_html=True)
 
@@ -15,8 +15,8 @@ st.image("https://miro.medium.com/max/1200/0*MkEov3K6UUjhuwOd.jpeg")
 st.markdown("Ce chapitre introduit la notion de modèle linéaire par la version la plus élémentaire : _**expliquer $Y$ par une fonction affine de $X$**_.")
 
 st.markdown("""
-# La régression linéaire
-La régression linéaire est simple lorsque le modèle ne comporte qu'une variable explicative_ $X$.
+# La régression linéaire simple
+La régression linéaire est simple lorsque le modèle ne comporte qu'_une variable explicative_ $X$.
 ##### Exemple : Prédire le prix du loyer d'un logement :
 """)
 d = {'Taille en m² (X)': [55, 110, 60, 75,150  ], 'Prix en 1000€ (Y)': [195000, 305000, 205000, 280000, 370000]}
@@ -102,8 +102,11 @@ st.pyplot(fig)
 st.markdown(r"""
 L'apprentissage consiste ici à déterminer quelles sont les valeurs de θ0 et θ1 qui donnent la meilleure estimation de $Y$. 
 Concrètement, pour la représentation graphique, il s'agit de **tracer une droite qui s'approche la plus possible de toutes les observations**.
+""")
 
+st.image("fig-2-simple-hypothesis.png")
 
+st.markdown(r"""
 ### La fonction coût : l’erreur quadratique moyenne
 Pour préciser ce que signifie une “bonne estimation” de Y, on définit ce qu'on appelle une **fonction d'erreur** (**cost function**),
  qui mesure l'erreur entre les valeurs prédites par le modèle et les valeurs obervées. Dans la régression linéaire, on utilise la fonction
@@ -216,4 +219,39 @@ st.image("LR3.png")
 st.markdown("""
 La descente du gradient peut être sujette à la convergence dans des minimums locaux tandis que le problème d'optimisation posé pour la 
 régression linéaire n'a qu'un seul minimum. **En d'autre mot la fonction coût de la régression linéaire est convexe**.
+
+### Comment évaluer la performance de notre modèle ?
+La fonction coût est un moyen de **mesurer la qualité** de notre algorithme.
+
+Nous avons parlé du MSE tout à l'heure, _la moyenne des erreurs au carré_. Pour pouvoir l'interpréter plus facilement, 
+on peut prendre la racine carré de cette valeur pour avoir le **RMSE**.
+
+Dans l'exemple précédent (prix en euros en fonction de la surface en m2) un RMSE égale à 50, signifie qu'en moyenne notre algorithme se trompe de 50€. 
+
+
+""")
+
+
+st.image("LR4.png")
+
+
+st.markdown(r"""
+
+Se tromper de 50€ c'est bien ou pas ?  C'est difficile de répondre objectivement à cette question.
+
+Cependant il existe une autre mesure : le coefficient de détermination ($R^2$).
+
+L'avantage c'est que cette métrique est toujours comprise entre $0$ et $1$ . Le $R^2$ explique la proportion de la variance de $Y$ 
+(variable à expliquer comme le prix d'une maison) expliquée par $X$ (variable explicative, le nombre de m²)
+
+$$
+R^{2}=1-{SS_{\rm {res}} \over SS_{\rm {tot}}}
+$$
+
+Plus cette métrique s'approche de 1, plus votre modélisation sera qualitative.
+
+Si on a un R2 de 0,7 on peut affirmer la chose suivante : “Notre modèle explique 70% de la variance ou encore 70% de la variance du prix d’une maison est expliquée par la surface en m2.” 
+
+A votre avis, comment pourrait-on améliorer la performance de notre algorithme ?
+
 """)
