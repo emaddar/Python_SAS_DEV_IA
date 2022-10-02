@@ -247,11 +247,31 @@ L'avantage c'est que cette métrique est toujours comprise entre $0$ et $1$ . Le
 $$
 R^{2}=1-{SS_{\rm {res}} \over SS_{\rm {tot}}}
 $$
+où _sum of squares of residuals_:
+$$
+{\displaystyle SS_{\text{res}}=\sum _{i}(y_{i}-h_{\theta}(x_i))^{2}=\sum _{i}e_{i}^{2}\,}
+$$
+et _total sum of squares (proportional to the variance of the data)_:
+$$
+{\displaystyle SS_{\text{tot}}=\sum _{i}(y_{i}-{\bar {y}})^{2}}
+$$
+
 
 Plus cette métrique s'approche de 1, plus votre modélisation sera qualitative.
 
-Si on a un R2 de 0,7 on peut affirmer la chose suivante : “Notre modèle explique 70% de la variance ou encore 70% de la variance du prix d’une maison est expliquée par la surface en m2.” 
+Si on a un $R^2$ de 0,7 on peut affirmer la chose suivante : “Notre modèle explique 70% de la variance ou encore 70% de la variance du prix 
+d'une maison est expliquée par la surface en m2.” 
 
-A votre avis, comment pourrait-on améliorer la performance de notre algorithme ?
+
+### D'où vient le coefficient de détermination $R^2$?
+Le coefficient de Pearson $r$ ou coefficient de corrélation linéaire, mesure la liaison entre deux variables. Sa valeur peut varier en -1 et et 1.
+
+Dans le cas d'une régression linéaire simple, le coefficient de détermination est le carré du coefficient de corrélation. Clique [ici](https://statproofbook.github.io/P/slr-rsq) pour voir la preuve.
+
+
+#### Abordez la régression linéaire d’un point de vue statistique
+Lien [ici](https://openclassrooms.com/fr/courses/4525326-realisez-des-modelisations-de-donnees-performantes/5754132-apprehendez-le-fonctionnement-de-la-regression-lineaire
+)
 
 """)
+
