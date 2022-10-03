@@ -36,14 +36,15 @@ avec $X_0 = 1$
 
 ### La fonction coût $J$ :
 $$
-J(\theta) = \frac{1}{2m}\sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})^2 = \frac{1}{2m} (X\theta - y)^T(X\theta - y) 
+J(\theta) = \frac{1}{2m}\sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})^2\\
+     = \frac{1}{2m} (X\theta - y)^T(X\theta - y) 
 $$
 
 ### Forme de la descente du gradient :
 répéter jusqu'à convergence \{
 $$
-\theta_j =: \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta) \\
-\texttt{                   }=: \theta_j - \alpha \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})x_j^{(i)}
+\theta_j =: \theta_j - \alpha \frac{\partial}{\partial \theta_j} J(\theta)\\
+    =: \theta_j - \alpha \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})x_j^{(i)}
 $$
 mettre à jour simultanément $\theta_j$ avec $j = 0,1,2,...n$
 
@@ -52,7 +53,8 @@ mettre à jour simultanément $\theta_j$ avec $j = 0,1,2,...n$
 #### Vectorisation
 répéter jusqu'à convergence  \{
 $$
-\theta =: \theta - \alpha \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}
+\theta =: \theta - \alpha \frac{1}{m} \sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})x^{(i)}\\
+=: \theta - \alpha \frac{1}{m} X^T(X\theta - y)
 $$
 \}
 """)
