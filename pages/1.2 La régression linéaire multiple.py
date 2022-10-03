@@ -36,7 +36,7 @@ avec $X_0 = 1$
 
 ### La fonction coût $J$ :
 $$
-J(\theta) = \frac{1}{2m}\sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})^2
+J(\theta) = \frac{1}{2m}\sum_{i=1}^m (h_{\theta}(x^{(i)}) - y^{(i)})^2 = \frac{1}{2m} (X\theta - y)^T(X\theta - y) 
 $$
 
 ### Forme de la descente du gradient :
