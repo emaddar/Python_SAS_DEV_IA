@@ -1,10 +1,11 @@
+from unicodedata import name
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 
 data_set_1 = pd.read_csv("https://raw.githubusercontent.com/chtunsw/ml_notes/master/ml_course/exercises/01_Linear_Regression/data/ex1data1.txt", header=None, names=["Population", "Profit"])
-data_set_1.plot(kind='scatter', x='Population', y='Profit')
-#plt.show()
+# data_set_1.plot(kind='scatter', x='Population', y='Profit')
+# plt.show()
 
 x = np.array(data_set_1.iloc[:, :1])
 y = np.array(data_set_1.iloc[:, 1:])
@@ -19,8 +20,8 @@ X = np.insert(x, 0, np.ones(m), axis=1)
 # init theta with 0s
 init_theta = np.zeros((2,1))
 #print(init_theta)
-iterations = 1500
-alpha = 0.01
+iterations = 10000
+alpha = 0.001
 
 # print(x.shape)
 # print(y.shape)
@@ -56,9 +57,15 @@ def gradientDescent(X, y, theta, alpha, iterations):
         new_theta -= alpha * 1 / (2 * m) * sum
         new_cost = vectorized_compute_cost(X, y, new_theta)
         costs.append(new_cost)
+        deff = costs[it] - costs[it - 1]
+        print(f"Iteration :{it} , cout : {'{:.20f}'.format(deff)}")
     return new_theta, costs
 
 learned_theta, costs = gradientDescent(X, y, init_theta, alpha, iterations)
 
 print(learned_theta)
-print(costs[-5 : -1])
+print(costs[-10 : -1])
+df = pd.DataFrame(costs, columns =['cout'])
+df['iteration'] = df.index
+df.plot(kind='scatter', x = "iteration", y = "cout")
+plt.show()
