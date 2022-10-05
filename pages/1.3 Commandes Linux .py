@@ -116,5 +116,6 @@ Pour éditer un texte (`ctrl+x` pour sortir)
 
 ## Exemple : 
 la commande : `mkdir -p A/B/C/D/E` va créer un dossier A et sous-dossier B dans A et sous-dossier C dans B ....
+
 la commande : `touch {A, A/B, A/B/C, A/B/C/D, A/B/C/D/E}/test.txt` va créer un fichier text.txt dans A et dans le sou-dossier B et dans le sous-sous-dossier C et ....
 """)
